@@ -4,14 +4,19 @@
 var words = ['Rick', 'Craig'];
 var letters = [];
 
-function frequency(arr) {
-  for(i = 0; i < arr.length; i++) {
-    for(j = 0; j < arr[i].length; j++) {
-      letters.push(arr[i].charAt(j).toLowerCase());
-    }
-  }
-  console.log(letters);
-  for(k = 0; k < letters.length; k++) {
+function getLetters(arr) {
+  letters.push(arr.join('').toLowerCase());
+  letters = letters[0].split('').sort();
+  return letters;
+}
 
+getLetters(words);
+
+function mostCommon(stringArr) {
+  var theMost = '';
+  for (i = 0; i < stringArr.length; i++) {
+
+    if(stringArr[i] )
   }
 }
+
