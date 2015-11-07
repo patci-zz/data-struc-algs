@@ -3,14 +3,14 @@
   with all the duplicates removed.*/
 
 function unique(arr) {
-  arr2 = arr.sort(function(a,b) {
-  return a > b;
-  });
-  for(i = 0; i < arr2.length; i++) {
-    if(arr2[i] === arr2[i+1]) {
-      arr2.splice(i+1, 1);
+  var arrCopy = [];
+  // Idea to use object from Jordan Bundy and Tyler Morgan
+  var checkAgainst = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (!checkAgainst[arr[i]]) {
+      checkAgainst[arr[i]] = arr[i];
+      arrCopy[arrCopy.length] = arr[i];
     }
   }
-  console.log(arr2);
-  return arr2;
+  return arrCopy;
 }
